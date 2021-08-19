@@ -75,14 +75,14 @@ const BoxScene = () => {
             onClick={handleOnClick}
             className="button"
           >
-            Hill scence
+            Hill scene
           </button>
           <button
             disabled={disableBtn}
             onClick={handleOnClick}
             className="button"
           >
-            Lake scence
+            Lake scene
           </button>
         </Html>
       </mesh>
