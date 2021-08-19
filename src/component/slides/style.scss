@@ -1,0 +1,38 @@
+.container {
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(240, 241, 238);
+  display: flex;
+  width: 100vw;
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(240, 241, 238);
+  }
+  .btn {
+    margin: 10px;
+    width: 100px;
+    font-size: 1.5rem;
+    background-color: forestgreen;
+    border-radius: 5px;
+    color: white;
+    border-style: solid;
+    border-color: rgb(187, 183, 183);
+    &:disabled {
+      background-color: white;
+      color: forestgreen;
+      border-color: rgb(178, 194, 178);
+    }
+  }
+  .slide {
+    background-color: rgb(240, 166, 166);
+    text-align: center;
+    h2 {
+      font-size: 2.5rem;
+      color: forestgreen;
+    }
+    p {
+      font-size: 1.75rem;
+    }
+  }
+}

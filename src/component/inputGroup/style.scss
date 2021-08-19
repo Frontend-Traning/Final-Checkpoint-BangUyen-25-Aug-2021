@@ -1,0 +1,17 @@
+.input {
+  margin: 0 auto;
+  width: 250px;
+  margin-top: 10px;
+  label {
+    margin-right: 5px;
+    width: 100px;
+    display: inline-block;
+  }
+}
+.submit {
+  margin: 0 auto;
+}
+.invalid {
+  color: red;
+  font-style: italic;
+}
