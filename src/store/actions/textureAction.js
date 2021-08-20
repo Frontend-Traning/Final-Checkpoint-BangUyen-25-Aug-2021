@@ -1,8 +1,14 @@
-import { SET_LIST_TEXTURE } from "../actionType";
+import { SET_EDIT_SCENETITLE, SET_STATE_TEXTURE_REDUCER } from "../actionType";
 
-export const setListTexture = (data) => {
+export const setStateTextureReducer = (data) => {
   return {
-    type: SET_LIST_TEXTURE,
+    type: SET_STATE_TEXTURE_REDUCER,
     payload: data,
+  };
+};
+export const setEditSceneTitle = (titleValue) => {
+  return {
+    type: SET_EDIT_SCENETITLE,
+    payload: titleValue,
   };
 };

@@ -1,9 +1,9 @@
 import { emailRegex } from "../consts/regex";
+
 export default function validateInfo(values) {
   let errors = {};
   let { email, password } = values;
   const key = Object.keys(values);
-  console.log(values);
   if (key.indexOf("email") !== -1) {
     if (!email || !email.trim()) {
       errors.email = "This field is required";
@@ -12,10 +12,12 @@ export default function validateInfo(values) {
     }
   }
   if (key.indexOf("password") !== -1) {
-    if (!password) {
+    if (password) {
+      if (password.length < 6) {
+        errors.password = "Password needs to be 6 characters or more";
+      }
+    } else {
       errors.password = "This field is required";
-    } else if (password.length < 6) {
-      errors.password = "Password needs to be 6 characters or more";
     }
   }
   return errors;

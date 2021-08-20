@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const useValidateForm = (validate) => {
-  const [value, setValue] = useState({});
+const useValidateForm = ({ validate, initialValue = {} }) => {
+  const [value, setValue] = useState(initialValue);
   const [error, setError] = useState({});
   const handleOnchange = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
@@ -10,8 +10,7 @@ const useValidateForm = (validate) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const key = Object.keys(value);
-    if (key.length !== 0) {
+    if (Object.keys().length) {
       setError(validate(value));
     } else {
       setError({ require: "This field is required" });

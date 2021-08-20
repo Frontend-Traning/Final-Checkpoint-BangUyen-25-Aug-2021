@@ -8,3 +8,14 @@
     color: white;
   }
 }
+.title-container {
+  display: flex;
+
+  .title {
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  .edit-icon {
+    font-size: 18px;
+  }
+}

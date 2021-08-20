@@ -1,48 +1,24 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import "./style.scss";
+import React from "react";
 import useColor from "../../hook/useColor";
 import Button from "../button";
 import InputGroup from "../inputGroup/InputGroup";
-const SlideShow = (props) => {
-  const { slides } = props;
-  const initTitle = slides[0].title;
-  const initText = slides[0].text;
-  const [title, setTitle] = useState(initTitle);
-  const [text, setText] = useState(initText);
-  const [index, setIndex] = useState(0);
-  const [isRestartDisable, setIsRestartDisable] = useState(false);
-  const [isPrevDisable, setIsPrevDisable] = useState(false);
-  const [isNexttDisable, setIsNexttDisable] = useState(false);
-  const slidesLength = slides.length;
+import { slides } from "../../consts/slides";
+import useShowSlides from "../../hook/useShowSlides";
+import "./style.scss";
 
-  const handleRestart = () => {
-    setIsPrevDisable(true);
-    setIndex(0);
-  };
-  const handlePrev = () => {
-    setIndex(index - 1);
-    setIsRestartDisable(false);
-  };
-  const handleNext = () => {
-    setIndex(index + 1);
-    setIsPrevDisable(false);
-    setIsRestartDisable(false);
-  };
+const SlideShow = () => {
+  const {
+    title,
+    text,
+    isRestartDisable,
+    isPrevDisable,
+    isNextDisable,
+    handleRestart,
+    handleNext,
+    handlePrev,
+  } = useShowSlides(slides);
   const randomColor = useColor();
-  useEffect(() => {
-    if (index === 0) {
-      setIsPrevDisable(true);
-      setIsNexttDisable(false);
-      setIsRestartDisable(true);
-    }
-    if (index === slidesLength - 1) {
-      setIsNexttDisable(true);
-    }
-    setTitle(slides[index].title);
-    setText(slides[index].text);
-    console.log("------slides rerender");
-  }, [index]);
+
   return (
     <div className="container">
       <div className="btn-group">
@@ -60,7 +36,7 @@ const SlideShow = (props) => {
         />
         <Button
           className="btn"
-          disabled={isNexttDisable}
+          disabled={isNextDisable}
           handleClick={handleNext}
           title="Next"
         />
@@ -73,10 +49,5 @@ const SlideShow = (props) => {
     </div>
   );
 };
-SlideShow.propTypes = {
-  slides: PropTypes.array,
-};
-SlideShow.defaultProps = {
-  slides: [],
-};
+
 export default SlideShow;

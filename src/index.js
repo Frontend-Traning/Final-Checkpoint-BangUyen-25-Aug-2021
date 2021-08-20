@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
 import store from "./store";
+import "./index.css";
 
 ReactDOM.render(
   <Suspense>

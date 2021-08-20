@@ -1,10 +1,10 @@
-import "./App.css";
 import React from "react";
-import World from "./component/world";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import World from "./component/world";
 import SlideShow from "./component/slides";
-import { slides } from "./consts/slides";
 import Shape from "./component/shape";
+import "./App.css";
+
 function App() {
   return (
     <Router>
@@ -13,7 +13,7 @@ function App() {
           <World />
         </Route>
         <Route path="/hook">
-          <SlideShow slides={slides} />
+          <SlideShow />
         </Route>
         <Route path="/shape">
           <Shape />

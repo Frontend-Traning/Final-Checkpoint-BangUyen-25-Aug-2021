@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 function randomColor(currenColor) {
   const colorArr = ["yellow", "blue", "grey", "hotpink"];
 
@@ -9,22 +9,17 @@ function randomColor(currenColor) {
   }
   return colorArr[newIndex];
 }
-function useColor() {
-  const [color, setColor] = useState("green");
-  const colorRef = useRef("green");
-
+function useColor({ clr = "green" }) {
+  const [color, setColor] = useState(clr);
   useEffect(() => {
     const interval = setInterval(() => {
       const newColor = randomColor(color);
-      // console.log("color", color);
-      // console.log("change color", colorRef.current);
       setColor(newColor);
-      colorRef.current = newColor;
     }, 1000);
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [color]);
   return color;
 }
 export default useColor;
