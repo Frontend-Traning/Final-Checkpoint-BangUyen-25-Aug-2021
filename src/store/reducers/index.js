@@ -1,5 +1,6 @@
-import { combineReducers } from "redux";
-import textureReducer from "./textureReducer";
+import { combineReducers } from 'redux';
+import sceneReducer from './sceneReducer.js';
+import popupReducer from './popupReducer.js';
 
-const rootReducer = combineReducers({ textureReducer });
+const rootReducer = combineReducers({ sceneReducer, popupReducer });
 export default rootReducer;

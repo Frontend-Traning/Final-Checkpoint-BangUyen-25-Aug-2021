@@ -1,0 +1,29 @@
+@import '../../scss/mixin.scss';
+@import '../../scss/variables.scss';
+
+.title-container {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 10px;
+  color: $white-color;
+  padding: 0 20px 10px;
+  font-family: $quick-sand-font;
+  @include tablet {
+    left: 30px;
+  }
+  .title {
+    font-size: 1rem;
+    font-weight: 700;
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+  .edit-icon {
+    font-size: 1rem;
+    cursor: pointer;
+    @include tablet {
+      font-size: 1.2rem;
+    }
+  }
+}

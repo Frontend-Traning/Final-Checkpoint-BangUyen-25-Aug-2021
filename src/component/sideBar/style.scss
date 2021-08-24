@@ -1,0 +1,45 @@
+@import '../../scss/variables.scss';
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  background-color: $black-background;
+  color: $white-color;
+  width: 30px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 0 7px 7px 0;
+  font-family: $quick-sand-font;
+  .list {
+    position: relative;
+    .scene {
+      position: absolute;
+      left: 30px;
+      top: 5px;
+      display: flex;
+      flex-direction: column;
+      .scene-title {
+        background-color: $black-background;
+        color: $white-color;
+        border: 1px solid $white-color;
+        border-left: none;
+        text-align: left;
+        white-space: nowrap;
+        width: 100%;
+        &:disabled {
+          color: $red-color;
+          cursor: default;
+        }
+      }
+    }
+  }
+  .rotate-btn {
+    margin-top: 45px;
+  }
+  .icon {
+    cursor: pointer;
+  }
+}

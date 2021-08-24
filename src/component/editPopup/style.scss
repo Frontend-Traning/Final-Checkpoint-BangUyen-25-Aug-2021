@@ -1,0 +1,74 @@
+@import '../../scss/mixin.scss';
+@import '../../scss/variables.scss';
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap/scss/_variables.scss';
+@import 'bootstrap/scss/_modal.scss';
+
+.modal-dialog {
+  .modal-content {
+    background-color: transparent;
+  }
+}
+.modal-container {
+  padding-right: 16px;
+  padding-left: 15px;
+  background-color: $grey-background;
+  .header {
+    display: flex;
+    color: $blue-navy-color;
+    .title {
+      font-size: 1rem;
+      @include tablet {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .exit-btn {
+    padding-right: 6px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .ipt-container {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: $black-color;
+    @include tablet {
+      margin: 15px 0;
+    }
+    .label {
+      margin-right: 5px;
+      font-size: 1rem;
+      color: $black-color;
+      font-weight: lighter;
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+    .ipt {
+      width: 90%;
+      margin-right: 4px;
+      font-size: 1rem;
+      font-weight: lighter;
+      color: $black-color;
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .footer {
+    .button {
+      margin-right: 2px;
+      margin-left: 10px;
+    }
+    .btn2 {
+      background-color: $blue-color;
+      color: $white-color;
+    }
+    .btn1 {
+      border-color: $dark-grey;
+      background-color: $white-color;
+    }
+  }
+}
