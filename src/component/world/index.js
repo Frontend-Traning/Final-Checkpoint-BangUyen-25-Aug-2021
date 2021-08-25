@@ -35,7 +35,7 @@ const World = () => {
           <div className='world'>
             <Canvas resize>
               <Provider store={store}>
-                <OrbitControls enableZoom={false} />
+                <OrbitControls maxDistance={40} />
                 <ambientLight />
                 <Suspense fallback={null}>
                   <BoxScene />

@@ -9,7 +9,7 @@ function randomColor(currenColor) {
   }
   return colorArr[newIndex];
 }
-function useColor({ clr = 'green' }) {
+function useColor(clr = 'green') {
   const [color, setColor] = useState(clr);
   useEffect(() => {
     const interval = setInterval(() => {
